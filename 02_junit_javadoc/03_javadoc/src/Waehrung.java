@@ -1,13 +1,14 @@
 // TODO: JavaDoc
 public class Waehrung {
 
-    // TODO: JavaDoc
+    //Wechselkurs zum Dollar
     private final int kurs;
 
-    // TODO: JavaDoc
+    // Name der Währung (z.B. Dollar, EURO, RUBEL etc..)
     private final String name;
 
-    // TODO: JavaDoc
+
+    //Kürzel der Währung (z.B. $, rub, etc..)
     private final String kuerzel;
 
     // TODO: JavaDoc
@@ -31,17 +32,28 @@ public class Waehrung {
         return betrag * kurs / toWaehrung.kurs;
     }
 
-    // TODO: JavaDoc
+    /**
+     * Gibt den Kurs des aktuellen Objekts zurück.
+     *
+     * @return kurs(int) der aktuelle Wechselkurs.
+     */
     public int getKurs() {
         return kurs;
     }
-    
-    // TODO: JavaDoc
+
+    /**
+     *Gibt den aktuellen Namen der Währung zurück.
+     * @return name - aktuelle Name der Währung (z.B. DOLLAR, EURO, RUBEL...etc)
+     */
     public String getName() {
         return name;
     }
 
     // TODO: JavaDoc
+    /**
+     * Gibt  das
+     * @return
+     */
     public String getKuerzel() {
         return kuerzel;
     }

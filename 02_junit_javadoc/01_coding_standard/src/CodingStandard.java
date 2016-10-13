@@ -2,48 +2,65 @@
  * Klasse dient als Beispiel für den Coding-Standard und die Namenskonventionen
  * bei Java-Programmen.
  */
-public 
-class 
-CodingStandard {
+public class CodingStandard {
 
-/*
- * Konstante, die dem Rest der Welt etwas mitteilen soll.
- */
-public final static int konstanteMitTOLLEMWert = 3;
+    /*
+     * Konstante, die dem Rest der Welt etwas mitteilen soll.
+     */
+    public final static int KONSTANTEMITTOLLEMWERT = 3;
 
-private int ERSTES_Feld;
-private double ZWEITES_Feld;
+    private int erstesFeld;
+    private double zweitesFeld;
 
     /*
      * Legt eine neue Instanz an.
      *
-     * Erstes_Feld: das erste Feld.
-     * ZweitesFeld: das zweite Feld.
+     * Erstes_Feld: das erste Feld. ZweitesFeld: das zweite Feld.
      */
-    public CodingStandard(int Erstes_Feld, double ZweitesFeld) 
-    {
-    this.ERSTES_Feld = Erstes_Feld;    this.ZWEITES_Feld = ZweitesFeld;
+    public CodingStandard(int erstesFeld, double zweitesFeld) {
+        this.erstesFeld = erstesFeld;
+        this.zweitesFeld = zweitesFeld;
     }
 
     /*
      * Methode, die etwas tut.
      *
-     * parameter: Eingabewert für die Methode.
-     * gibt einen Wert abhängig von {@code parameter} zurück.
+     * parameter: Eingabewert für die Methode. gibt einen Wert abhängig von
+     * {@code parameter} zurück.
      */
-    public int 
-    Methode_Die_Was_Tut(int Parameter) 
-    {
-    int result;
+    public int methodeDieWasTut(int parameter) {
+        int result;
 
-    if (Parameter > konstanteMitTOLLEMWert)
-    result = 12;        
-    else 
-    {
-        result = 13; }
+        if (parameter > KONSTANTEMITTOLLEMWERT)
+            result = 12;
+        else {
+            result = 13;
+        }
 
-    ERSTES_Feld = result; ZWEITES_Feld = 2 * result;
+        erstesFeld = result;
+        zweitesFeld = 2 * result;
 
-    return result;
+        return result;
     }
+
+    public int получитьПервое() {
+
+        return this.erstesFeld;
+    }
+
+    public double получитьВторое() {
+        return this.zweitesFeld;
+    }
+
+    public static void main(String[] args) {
+
+        CodingStandard test = new CodingStandard(2, 5);
+
+        int a = test.получитьПервое();
+        double b = test.получитьВторое();
+
+        System.out.println(a + b);
+
+    }
+
 }
