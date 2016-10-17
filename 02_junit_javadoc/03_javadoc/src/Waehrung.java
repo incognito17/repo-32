@@ -1,4 +1,7 @@
-// TODO: JavaDoc
+/**Repräsentiert eine Währung
+ * @author incognito
+ *
+ */
 public class Waehrung {
 
     //Wechselkurs zum Dollar
