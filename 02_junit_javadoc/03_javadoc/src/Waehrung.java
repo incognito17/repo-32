@@ -15,7 +15,9 @@ public class Waehrung {
     private static final long TEILER = 10000;
 
     /**
-     * Erzeugt ein neues Objekt.
+     * Erzeugt ein neues Objekt. Das erzeugte Objekt ist die Währung, die man
+     * instanziert mit Atttributen wie: "Name der Währung"; "Kürzel der Währung"; und
+     * den aktuellen "Kurs";
      *
      * @param name Name der Währung (z.B. EURO).
      * @param kuerzel Kürzel der Währung (z.B. €).
@@ -27,7 +29,20 @@ public class Waehrung {
         this.kuerzel = kuerzel;
     }
 
-    // TODO: JavaDoc
+    /**
+     * Führt eine Umrechnung durch, in dem der übergebene Parameter "betrag"
+     * in die gewollte Währung (-ebenfalls als Parameter übergeben-) umgerechnet wird.
+     * @param betrag - Der Betrag des Geldes, welchen man in die "Ziel-Währung
+     * umwandeln will - hier als <i>long</i>
+     * <p>
+     * @param toWaehrung - Die "Ziel-Währung", die als Parameter übergeben wird, in
+     * die man die aktuelle Währung umwandeln möchte.
+     * <p>
+     * @return Der neu umgerechnete Betrag des übergebenen wird als <i>long</i>
+     * der Ziel-Währung zurückgegeben.
+     *
+     */
+
     public long umrechnen(long betrag, Waehrung toWaehrung) {
         return betrag * kurs / toWaehrung.kurs;
     }
@@ -49,10 +64,11 @@ public class Waehrung {
         return name;
     }
 
-    // TODO: JavaDoc
     /**
-     * Gibt  das
-     * @return
+     * Gibt das Kürzel der aktuellen Währung des instanzierten Objekts zurück.
+     *
+     *
+     * @return - {@code kuerzel: das aktuelle Kürzel (z.B. €)}
      */
     public String getKuerzel() {
         return kuerzel;
