@@ -7,6 +7,7 @@ public class Wesen {
 
     /** Name der Spielfigur. */
     private String name;
+    
 
     /**
      * Legt eine neue Spielfigur an.
