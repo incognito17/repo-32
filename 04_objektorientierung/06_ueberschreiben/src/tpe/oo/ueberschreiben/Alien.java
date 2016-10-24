@@ -1,6 +1,7 @@
 package tpe.oo.ueberschreiben;
 
 import java.awt.Point;
+import java.awt.event.MouseEvent;
 
 import de.smits_net.games.framework.board.Board;
 import de.smits_net.games.framework.image.AnimatedImage;
@@ -28,7 +29,12 @@ public class Alien extends AnimatedSprite {
                         "assets/spike_fist_move_strip5.png"));
         velocity.setVelocity(Direction.WEST, ALIEN_SPEED);
     }
-
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        // TODO Auto-generated method stub
+        super.mouseClicked(e);
+        explode();
+    }
     /**
      * Alien explodieren lassen.
      */
