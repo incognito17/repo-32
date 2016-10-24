@@ -1,6 +1,10 @@
 package tpe.oo.constructor.test;
 
+import static org.junit.Assert.*;
+
 import org.junit.Test;
+
+import tpe.oo.constructor.Nachtelf;
 
 /*
 import tpe.constructor.Wesen;
@@ -20,14 +24,14 @@ public class TestWesen {
      */
     @Test
     public void testNachtelf() {
-        /*
+
         assertTrue("Nachtelf erbt nicht von Figur", new Nachtelf("") instanceof Wesen);
         assertEquals(Nachtelf.STANDARD_NATURWIDERSTAND, new Nachtelf("").getNaturwiderstand());
         assertEquals(120, new Nachtelf("", 120).getNaturwiderstand());
         assertEquals("Hugo", new Nachtelf("Hugo").getName());
-        */
+
     }
-    
+
     /**
      * Testet den Untoten.
      */

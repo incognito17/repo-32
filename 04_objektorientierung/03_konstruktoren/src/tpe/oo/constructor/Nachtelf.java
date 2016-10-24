@@ -13,6 +13,8 @@ public class Nachtelf  extends Wesen {
 
     // Konstruktoren fehlen. Bitte hier einfügen.
 
+
+
     public Nachtelf(String name,int staerke){
       super(name);
 
