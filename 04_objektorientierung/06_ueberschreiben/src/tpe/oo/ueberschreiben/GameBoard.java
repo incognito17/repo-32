@@ -37,7 +37,15 @@ public class GameBoard extends Board {
     public void drawGame(Graphics g) {
         // Alien zeichnen
         alien.draw(g, this);
+
     }
+    /**
+     * Abschlusstext zeichnen, nach dem das Alien getroffen wurde
+     */
+    public void drawGameOver(Graphics g){
+        centerText(g,"USE");
+    }
+
 
     /**
      * Spielsituation updaten. Wird vom Framework aufgerufen.
@@ -47,4 +55,6 @@ public class GameBoard extends Board {
         alien.move();
         return alien.isVisible();
     }
+
+
 }
