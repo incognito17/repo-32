@@ -30,10 +30,11 @@ public class Alien extends AnimatedSprite {
         velocity.setVelocity(Direction.WEST, ALIEN_SPEED);
     }
     @Override
-    public void mouseClicked(MouseEvent e) {
+    public void mouseClicked() {
         // TODO Auto-generated method stub
-        super.mouseClicked(e);
+        super.mouseClicked();
         explode();
+       
     }
     /**
      * Alien explodieren lassen.
