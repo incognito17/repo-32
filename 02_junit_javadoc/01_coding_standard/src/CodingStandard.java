@@ -43,12 +43,12 @@ public class CodingStandard {
         return result;
     }
 
-    public int получитьПервое() {
+    public int getFirst() {
 
         return this.erstesFeld;
     }
 
-    public double получитьВторое() {
+    public double getSecond() {
         return this.zweitesFeld;
     }
 
@@ -56,8 +56,8 @@ public class CodingStandard {
 
         CodingStandard test = new CodingStandard(2, 5);
 
-        int a = test.получитьПервое();
-        double b = test.получитьВторое();
+        int a = test.getFirst();
+        double b = test.getSecond();
 
         System.out.println(a + b);
 
