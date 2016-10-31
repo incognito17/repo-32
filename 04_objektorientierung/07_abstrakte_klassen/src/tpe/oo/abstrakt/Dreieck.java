@@ -3,7 +3,7 @@ package tpe.oo.abstrakt;
 /**
  * Ein Dreieck.
  */
-public class Dreieck {
+public class Dreieck extends Figur{
 
     /** Grundseite des Dreiecks. */
     private double grundseite;
@@ -29,5 +29,8 @@ public class Dreieck {
      */
     public double flaeche() {
         return grundseite * hoehe / 2;
-    }    
+    } 
+    
+    
+    
 }
