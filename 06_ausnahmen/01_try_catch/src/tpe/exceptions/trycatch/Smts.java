@@ -5,16 +5,15 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Random;
 
-/**
- * Ein simples Zahlenraten-Spiel.
- */
-public final class Zahlenraten {
+
+public final class Smts {
 
     /**
      * Liest einen String von der Tastatur.
      *
      * @return der gelesene String
      * @throws IOException Probleme mit der Console
+     * @throws NumberFormatException
      */
     private static String readNumber()
             throws NumberFormatException, IOException {
@@ -40,31 +39,32 @@ public final class Zahlenraten {
         int zahl = new Random().nextInt(100) + 1;
 
         int versuche = 0;
-        try {
 
-            while (true) {
-                System.out.print("Bitte geben Sie eine Zahl ein: ");
-                int geraten = Integer.parseInt(readNumber());
-                versuche++;
+        while (true) {
 
-                if (geraten < zahl) {
-                    System.out.println("Zu niedrig");
-                }
-                else if (geraten > zahl) {
-                    System.out.println("Zu hoch.");
-                }
-                else {
-                    System.out.printf("Richtig in %d Versuchen", versuche);
-                    break;
-                }
+            System.out.print("Bitte geben Sie eine Zahl ein: ");
+            int geraten = 0;
+            try {
+                geraten = Integer.parseInt(readNumber());
             }
+            catch (NumberFormatException | IOException t) {
+                System.err.println("HET");
+                continue;
+            }
+            versuche++;
 
-        }
-        catch (NumberFormatException | IOException t) {
-
-            System.err.println("HET");
-
+            if (geraten < zahl) {
+                System.out.println("Zu niedrig");
+            }
+            else if (geraten > zahl) {
+                System.out.println("Zu hoch.");
+            }
+            else {
+                System.out.printf("Richtig in %d Versuchen", versuche);
+                break;
+            }
         }
 
     }
+
 }

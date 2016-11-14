@@ -13,40 +13,34 @@ public class DualShock4 implements AnalogController,DigitalController{
 
     @Override
     public void up() {
-        // TODO Auto-generated method stub
         b.up();
 
     }
 
     @Override
     public void down() {
-        // TODO Auto-generated method stub
         b.down();
     }
 
     @Override
     public void left() {
-        // TODO Auto-generated method stub
         b.left();
 
     }
 
     @Override
     public void right() {
-        // TODO Auto-generated method stub
         b.right();
     }
 
     @Override
     public void up(double prcnt) {
-        // TODO Auto-generated method stub
         a.up(prcnt);
 
     }
 
     @Override
     public void down(double prcnt) {
-        // TODO Auto-generated method stub
         a.down(prcnt);
 
 
@@ -54,14 +48,12 @@ public class DualShock4 implements AnalogController,DigitalController{
 
     @Override
     public void left(double prcnt) {
-        // TODO Auto-generated method stub
         a.left(prcnt);
 
     }
 
     @Override
     public void right(double prcnt) {
-        // TODO Auto-generated method stub
 
         a.right(prcnt);
 
@@ -70,7 +62,6 @@ public class DualShock4 implements AnalogController,DigitalController{
 
     @Override
     public Point getPosition() {
-        // TODO Auto-generated method stub
 
         int x_a= a.getPosition().x;
         int y_a= a.getPosition().y;
