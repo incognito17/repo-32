@@ -11,7 +11,7 @@ import de.smits_net.games.framework.sprite.Direction;
 /**
  * Ein Alien.
  */
-public class Alien extends AnimatedSprite {
+public class Alien0 extends AnimatedSprite {
 
     /** Geschwindigkeit des Alien X-Richtung. */
     private static final int ALIEN_SPEED = 2;
@@ -22,7 +22,7 @@ public class Alien extends AnimatedSprite {
      * @param board das Spielfeld
      * @param startPoint Start-Position
      */
-    public Alien(Board board, Point startPoint) {
+    public Alien0(Board board, Point startPoint) {
         super(board, startPoint, BoundaryPolicy.JUMP_BACK,
                 new AnimatedImage(50,
                         new ImagePack("assets", "ship01", "ship02", "ship03")));

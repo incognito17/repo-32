@@ -46,6 +46,8 @@ public class GameBoard extends Board {
         // Münzen anlegen
         for (int i = 0; i < 20; i++) {
             // TODO: Neue Münzen auf den Stapel legen
+
+            muenzen.push(createCoin());
         }
     }
 
@@ -111,6 +113,7 @@ public class GameBoard extends Board {
      */
     @Override
     public synchronized void mouseClicked(MouseEvent e) {
+        Sprite s = null;
 
         if (startzeit == 0) {
             startzeit = System.currentTimeMillis();
@@ -118,14 +121,20 @@ public class GameBoard extends Board {
 
         // TODO: Wenn Stapel leer ist, nichts tun
 
+        if(muenzen.isEmpty()){
+            return;
+        }else{
+
         // TODO: Oberstes Sprite vom Stapel ansehen und s zuweisen
-        Sprite s = null;
+
+        s=(Sprite) muenzen.peek();
+        }
 
         if (s.intersects(new Point(e.getX(), e.getY()))) {
             points++;
 
             // TODO: Oberstes Sprite vom Stapel entfernen und s zuweisen
-            s=muenzen.pop();
+            s= muenzen.pop();
             moving = s;
             moving.setVelocity(new Velocity(0, 20));
         }
@@ -143,5 +152,11 @@ public class GameBoard extends Board {
 
         // TODO: Solange Stapel noch Elemente enthält, true zurückgeben.
         return muenzen.size()!=0;
+//        if(!(muenzen.isEmpty())){
+//            return true;
+//        }else{
+//            return false;
+//
+//        }
     }
 }
