@@ -10,8 +10,8 @@ public class CrypterImpl implements Crypter {
 		String lower = input.toLowerCase();
 		String tmp1 ="";
 		
-		//Hier werden die ungültigen Zeichen aussortiert und
-		//nur die gültigen Zeichen werden in einen temporären String aufgenommen.
+		//Hier werden die ungÃ¼ltigen Zeichen aussortiert und
+		//nur die gÃ¼ltigen Zeichen werden in einen temporÃ¤ren String aufgenommen.
 		for(int i=0; i<lower.length();i++){
 			if((lower.charAt(i)<='9'&& lower.charAt(i)>='0')|| 
 			(lower.charAt(i)<='z' && lower.charAt(i)>= 'a')||(lower.charAt(i)==' ' )){
@@ -19,13 +19,13 @@ public class CrypterImpl implements Crypter {
 				tmp1 += lower.charAt(i);
 			}
 		}
-		//Hier wird der temporäre String in einen Char-array umgewandelt.
+		//Hier wird der temporÃ¤re String in einen Char-array umgewandelt.
 		char [] tmp = new char[tmp1.length()];
 		for(int j=0; j<tmp1.length();j++){
 			tmp[j]=tmp1.charAt(j);
 			}
 		//Hier findet die eigentliche Umkodierung statt.
-		//Die einzelnen Zeichen werden gemäß den Vorgabenvertauscht.
+		//Die einzelnen Zeichen werden gemÃ¤ÃŸ den Vorgabenvertauscht.
 		for (int n= 0; n<tmp.length; n++){
 			char c=tmp[n];
 			switch(c){
@@ -64,21 +64,21 @@ public class CrypterImpl implements Crypter {
 		for(int j=0; j<input.length();j++){
 			tmpD[j]=input.charAt(j);
 			}
-		//Hier wird zunächst in einer for-Schleife geprüft ob der nun
-		//umgewandelte Char-array ungültige Zeichen enthält, 
+		//Hier wird zunÃ¤chst in einer for-Schleife geprÃ¼ft ob der nun
+		//umgewandelte Char-array ungÃ¼ltige Zeichen enthÃ¤lt, 
 		//falls ja wird eine IllegalArgumentException geworfen.
 		for (int n= 0; n<tmpD.length; n++){
 			if(tmpD[n]>='A' && tmpD[n]<='Z'){
 				
 				throw new IllegalArgumentException();
 				
-			}else if(tmpD[n]=='Ä'||tmpD[n]=='Ü' ||tmpD[n]=='Ö' 
-					|| tmpD[n]=='ü'||tmpD[n]=='ä' ||tmpD[n]=='ö' ){
+			}else if(tmpD[n]=='Ã„'||tmpD[n]=='Ãœ' ||tmpD[n]=='Ã–' 
+					|| tmpD[n]=='Ã¼'||tmpD[n]=='Ã¤' ||tmpD[n]=='Ã¶' ){
 				
 				throw new IllegalArgumentException();
 				
 			}else if(tmpD[n]=='&'||tmpD[n]=='$'||tmpD[n]=='%' ||tmpD[n]=='/' 
-					||tmpD[n]=='?' ||tmpD[n]=='!'||tmpD[n]=='§'){
+					||tmpD[n]=='?' ||tmpD[n]=='!'||tmpD[n]=='Â§'){
 				
 				throw new IllegalArgumentException();
 				
