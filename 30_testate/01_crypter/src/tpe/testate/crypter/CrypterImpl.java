@@ -1,8 +1,44 @@
-package tpe.testate.crypter;
+package testat;
+
+/**
+ * In dieser Klasse werden Texte verschlüsselt. 
+ * Dazu wird eine spezielle TPE-Verschlüsselung verwendet.
+ * 
+ * Genauere Beschreibung dieser Verschlüsselung:
+ * @see Crypter.java
+ * 
+ * Bei der verschlüsselung werden gewisse Zeichen durch andere ersetzt:
+ * 
+ * Die Ersetzung funktioniert nach folgendem Schema:
+ * 
+ *    e -> 3
+ *    3 -> e
+ *    l -> 1
+ *    1 -> l
+ *    o -> 0
+ *    0 -> o
+ *    a -> 4
+ *    4 -> a
+ *    t -> 7
+ *    7 -> t
+ * Zum Beispiel wird der Text: "tpe im sose 2016 ist eine super vorlesung"
+ * umgewandelt in: 			   "7p3 im s0s3 2ol6 is7 3in3 sup3r v0r13sung"
+ * 
+ * Gültige Zeichen sind dabei: Buchstaben a-z, Ziffern 0-9, und das Leerzeichen.
+ * 
+ * @author incognito17
+ */
 
 public class CrypterImpl implements Crypter {
 	/**
-	 * Methode zum enkrypten.
+	 * @see Crypter.java
+	 * 
+	 * "Verschlüsselt den gegebenen Text. Enthält die Eingabe Großbuchstaben,
+     * so werden diese in Kleinbuchstaben umgewandelt. Ungültige Zeichen
+     * werden ignoriert und nicht in den verschlüsselten Text übernommen."
+	 * 
+	 * @param input: Text der versclüsselt werden soll.
+	 * @return output: Verschlüsselter Text
 	 */
 	@Override
 	public String encrypt(String input) {
@@ -55,7 +91,16 @@ public class CrypterImpl implements Crypter {
 		return output;
 	}
 	/**
-	 * Methode zum Dekrypten.
+	 * @see Crypter.java
+	 * 
+	 * "Entschlüsselt den gegebenen Text. Enthält die Eingabe Großbuchstaben,
+     * oder andere ungültige Zeichen, so wirft die Methode eine Ausnahme."
+     * 
+     * @param input: Text, der entschlüsselt werden soll.
+     * @return output: Entschlüsselter Text
+     * @throws IllegalArgumentException wird geworfen, wenn die Eingabe
+     *      ungültige Zeichen (Großbuchstaben) enthält.
+     * 
 	 */
 	@Override
 	public String decrypt(String input) throws IllegalArgumentException {
