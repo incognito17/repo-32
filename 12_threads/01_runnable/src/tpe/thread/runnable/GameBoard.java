@@ -34,9 +34,8 @@ public class GameBoard extends Board {
         // Threads starten
         Thread[] ts = new Thread[ufos.length];
         for (int i = 0; i < ts.length; i++) {
-         // TODO: Einkommentieren
-//            ts[i] = new Thread(ufos[i]);
-//            ts[i].start();
+            ts[i] = new Thread(ufos[i]);
+            ts[i].start();
         }
     }
 
