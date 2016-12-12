@@ -52,8 +52,6 @@ public class Ufo extends AnimatedImage implements Runnable {
 
     @Override
     public void run() {
-        // TODO Auto-generated method stub
-
 
         while(true){
             x++;
@@ -62,8 +60,7 @@ public class Ufo extends AnimatedImage implements Runnable {
             }catch(InterruptedException e){
               break;
             }
-
-        }
+            }
 
         this.explode();
     }
