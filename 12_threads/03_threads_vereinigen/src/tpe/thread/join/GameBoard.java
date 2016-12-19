@@ -23,11 +23,18 @@ public class GameBoard extends Board {
          */
         public void run() {
 
-            // TODO: Threads vereinigen
+            for (Thread n : threads){
+                try {
+                    n.join();
+                } catch (InterruptedException e) {
 
-            // TODO: Ufos sprengen, wenn alle Threads zu Ende gekommen sind
+                }
+            }
+               for(Ufo n : ufos){
+                    n.explode();
+                }
+               }
         }
-    }
 
     /** Ufos, die durch das Bild fliegen. */
     private Ufo[] ufos = {

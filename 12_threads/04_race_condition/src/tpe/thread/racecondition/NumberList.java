@@ -9,7 +9,7 @@ import java.util.List;
 public class NumberList {
 
     /** Die gespeicherten Zahlen. */
-    private List<Integer> numbers = new ArrayList<>();
+    private volatile List<Integer> numbers = new ArrayList<>();
 
     /** Die letzte Zahl, die gespeichert wurde. */
     private int lastNumber;
@@ -19,7 +19,7 @@ public class NumberList {
      *
      * @return letzte Zahl.
      */
-    public int getLastNumber() {
+    public synchronized int getLastNumber() {
         return lastNumber;
     }
 
@@ -28,7 +28,7 @@ public class NumberList {
      *
      * @param number die zu speichernde Zahl.
      */
-    public void add(int number) {
+    public synchronized void add(int number) {
         lastNumber = number;
         numbers.add(number);
     }
@@ -38,7 +38,7 @@ public class NumberList {
      *
      * @throws IllegalArgumentException wenn die Zahlen nicht fortlaufend sind
      */
-    public void check() {
+    public synchronized void check() {
 
         int number = 0;
 

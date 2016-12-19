@@ -53,8 +53,12 @@ public class Ufo extends AnimatedImage implements Runnable {
     @Override
     public void run() {
 
-        while(true){
+        while(x<board.getWidth()){
             x++;
+
+            if(Thread.currentThread().isInterrupted()){
+                break;
+            }
             try{
                 Thread.sleep(sleepTime);
             }catch(InterruptedException e){
